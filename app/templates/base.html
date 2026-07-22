@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/output.css">
+    <link rel="icon" type="img/svg" href="{{url_for('static',filename='img/logo.png')}}">
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V" crossorigin="anonymous"></script>
+    <title> {% block title %}shot url{% endblock %} </title>
+</head>
+<body>
+    <header class="h-20 bg-red-500" >
+        {% if current_user.name %}
+        <a  href="{{url_for('main.index')}}"  >
+            <img src="{{url_for('static',filename='img/logo.svg')}}" alt="logo app" class="w-25 h-25 object-cover absolute ">
+        </a>
+        {% endif %}
+    </header>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info alert-outline text-xl " role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+</body>
+</html>

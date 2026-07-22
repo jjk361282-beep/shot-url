@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@plugin "daisyui"{
+  themes: light --default;
+}
+
+
+/* body{
+  background-color: #090909;
+} */
+
+.input_text{
+  @apply  placeholder:text-gray-500 placeholder:italic input focus:border-blue-500 outline-none focus:ring-blue-500 w-60 
+}
+.new_task{
+  @apply placeholder:text-gray-500 placeholder:italic input focus:border-blue-500 outline-none focus:ring-blue-500 w-160 rounded-xl
+}
+.btn_con{
+  @apply btn w-60 rounded-lg bg-[#5377ec]
+}
+.edtite{
+  @apply border-b-2 border-olive-300 focus:border-white w-[80%] focus:ring-white
+}

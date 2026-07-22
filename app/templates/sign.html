@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title%}login{% endblock %}
+
+{% block body %}
+<div class=" w-full h-screen flex justify-center items-center ">
+    <div class=" bg-white  shadow-xl/20 h-120 rounded-lg ">
+        <form action="" method="post" class="flex   h-90  w-80  gap-5  flex-col justify-center items-center " >
+            {{form.hidden_tag()}}
+            {{form.name(placeholder="Name",class_="input_text")}}
+            {{form.email(placeholder="Email",class_="input_text")}}
+            {{form.password(placeholder="mots de passe 6-18 caracteres",class_="input_text")}}
+            <button class=" btn_con  " type="submit" > S'inscrire </button>
+        </form>
+        <hr class="w-70 bg-gray-700 relative left-5 -top-7.5 opacity-50 " >
+        <div class="flex w-full flex-col justify-center items-center gap-3 ">
+            
+            <a href="{{url_for('auth.sign')}}"> se connecter </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
